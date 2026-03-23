@@ -1,14 +1,34 @@
 // import img from "../../public/cnuts.png"
 const products = [
   // { name: "Jumbo Cashews", weight: "500g / 1kg", tag: "Signature", img: "https://images.unsplash.com/photo-1536628218485-db204a439c77?q=80&w=800" },
-  { name: "Jumbo Cashews", weight: "500g / 1kg", tag: "Signature", img: "../../public/cs.jpg" },
-  { name: "California Almonds", weight: "500g / 1kg", tag: "Premium", img: "../../public/al.png" },
-  { name: "Chilean Walnuts", weight: "250g / 500g", tag: "Brain Food", img: "../../public/wl.png" },
-  { name: "Dried Afghani Figs", weight: "200g Pouch", tag: "Iron Rich", img: "../../public/fg.png" },
-  { name: "Green Raisins", weight: "500g Pack", tag: "Natural", img: "../../public/g.webp" },
-  { name: "Roasted Pistachios", weight: "250g / 500g", tag: "Salted", img: "../../public/p.webp" },
-  { name: "Mixed Nuts Mix", weight: "1kg Bulk", tag: "Party Pack", img: "../../public/mx.jpg" },
-  { name: "Wholesale Cashews", weight: "10kg+ Carton", tag: "B2B Only", img: "https://images.unsplash.com/photo-1596560548464-f010549b84d7?q=80&w=800" },
+  { name: "Whole Cashews", weight: "1kg", tag: "Signature", img: "../../public/cs.jpg" },
+  { name: "Whole Cashews", weight: "500g", tag: "Signature", img: "../../public/cs.jpg" },
+  { name: "Whole Cashews", weight: "100g", tag: "Signature", img: "../../public/cs.jpg" },
+
+  { name: "Cashew Pakali", weight: "1kg", tag: "Premium", img: "../../public/al.png" },
+  { name: "Cashew Pakali", weight: "500g", tag: "Premium", img: "../../public/al.png" },
+  { name: "Cashew Pakali", weight: "100g", tag: "Premium", img: "../../public/al.png" },
+
+
+  { name: "Tukada Cashew", weight: "1kg", tag: "Premium", img: "../../public/al.png" },
+  { name: "Tukada Cashew", weight: "500g", tag: "Premium", img: "../../public/al.png" },
+  { name: "Tukada Cashew", weight: "100g", tag: "Premium", img: "../../public/al.png" },
+
+
+  { name: "Roasted Cashew", weight: "1kg", tag: "Premium", img: "../../public/al.png" },
+  { name: "Roasted Cashew", weight: "500g", tag: "Premium", img: "../../public/al.png" },
+  { name: "Roasted Cashew", weight: "100g", tag: "Premium", img: "../../public/al.png" },
+
+
+
+  
+  // { name: "California Almonds", weight: "500g / 1kg", tag: "Premium", img: "../../public/al.png" },
+  // { name: "Chilean Walnuts", weight: "250g / 500g", tag: "Brain Food", img: "../../public/wl.png" },
+  // { name: "Dried Afghani Figs", weight: "200g Pouch", tag: "Iron Rich", img: "../../public/fg.png" },
+  // { name: "Green Raisins", weight: "500g Pack", tag: "Natural", img: "../../public/g.webp" },
+  // { name: "Roasted Pistachios", weight: "250g / 500g", tag: "Salted", img: "../../public/p.webp" },
+  // { name: "Mixed Nuts Mix", weight: "1kg Bulk", tag: "Party Pack", img: "../../public/mx.jpg" },
+  // { name: "Wholesale Cashews", weight: "10kg+ Carton", tag: "B2B Only", img: "https://images.unsplash.com/photo-1596560548464-f010549b84d7?q=80&w=800" },
 ];
 
 export default function Products() {
