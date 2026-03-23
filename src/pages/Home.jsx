@@ -6,8 +6,8 @@ const whyFeatures = [
   { title: "High Profit Margin", desc: "Earn 25%–40% on every premium pack sold.", icon: "💰" },
   { title: "Premium Quality", desc: "Handpicked, jumbo-sized Grade A+ cashews.", icon: "💎" },
   { title: "Fast Selling", desc: "High demand across all retail and gym segments.", icon: "⚡" },
-  { title: "Bulk Supply", desc: "Reliable inventory management for large orders.", icon: "📦" },
-  { title: "Pan India", desc: "Seamless distribution network across all states.", icon: "🇮🇳" },
+  // { title: "Bulk Supply", desc: "Reliable inventory management for large orders.", icon: "📦" },
+  // { title: "Pan India", desc: "Seamless distribution network across all states.", icon: "🇮🇳" },
 ];
 
 const products = [
