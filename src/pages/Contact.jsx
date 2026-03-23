@@ -1,6 +1,6 @@
 const contactInfo = [
-  { icon: "📍", label: "Corporate Office", value: "Nutfullo HQ, Business Bay, Yerwada, Pune, Maharashtra 411006" },
-  { icon: "📞", label: "Business Enquiries", value: "+91 98765 43210" },
+  { icon: "📍", label: "Corporate Office", value: "Shivtirthnagar , Kothrud , Pune - 411038" },
+  { icon: "📞", label: "Business Enquiries", value: "+91 8767334312" },
   { icon: "📧", label: "Official Support", value: "partners@nutfullo.com" },
   { icon: "⏰", label: "Working Hours", value: "Mon - Sat: 10:00 AM - 7:00 PM" },
 ];

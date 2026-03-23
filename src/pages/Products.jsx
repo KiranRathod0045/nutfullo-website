@@ -41,7 +41,7 @@ export default function Products() {
             Our Premium Catalog
           </div>
           <h2 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tight">
-            Wholesale <span className="text-emerald-600">Dry Fruits.</span>
+            Where Quality  <span className="text-emerald-600">Meets Profit.</span>
           </h2>
           <p className="text-slate-500 mt-6 text-lg leading-relaxed">
             Hand-selected, double-sorted, and vacuum-sealed to preserve the crunch and nutrition 

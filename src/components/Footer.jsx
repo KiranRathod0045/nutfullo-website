@@ -83,7 +83,7 @@ export default function Footer() {
         {/* Bottom Section: Copyright */}
         <div className="flex flex-col md:flex-row justify-between items-center pt-12 gap-6">
           <p className="text-slate-500 text-xs">
-            © {currentYear} <span className="text-white font-medium">Nutfullo India Pvt. Ltd.</span> All rights reserved.
+            © {currentYear} <span className="text-white font-medium">Nutrace Food Pvt Ltd</span> All rights reserved.
           </p>
           <div className="flex gap-8 text-xs text-slate-500">
             <p className="flex items-center gap-2">
