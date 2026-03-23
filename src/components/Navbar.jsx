@@ -106,6 +106,8 @@
 //   );
 // }
 
+
+
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -114,13 +116,23 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
+  // 1. Handle background scroll lock
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [open]);
+
+  // 2. Handle scroll appearance
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close menu when route changes
+  // 3. Close menu on navigation
   useEffect(() => setOpen(false), [location]);
 
   const navLinks = [
@@ -132,42 +144,66 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className={`fixed top-0 w-full z-[100] transition-all duration-300 px-6 py-4 ${
-      scrolled ? "bg-white/90 backdrop-blur-xl shadow-sm py-3" : "bg-transparent"
-    }`}>
-      <div className="container mx-auto flex justify-between items-center">
-        <Link to="/" className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-emerald-600 rounded-xl flex items-center justify-center text-white font-black text-xl">N</div>
-          <h1 className="text-2xl font-black tracking-tighter text-slate-900">Nutfullo<span className="text-emerald-600">.</span></h1>
-        </Link>
-
-        {/* Desktop links */}
-        <div className="hidden md:flex items-center bg-slate-100/50 backdrop-blur-md px-2 py-1.5 rounded-2xl border border-white/50">
-          {navLinks.map((link) => (
-            <Link key={link.path} to={link.path} className={`px-5 py-2 rounded-xl text-sm font-bold transition-all ${
-              location.pathname === link.path ? "bg-white text-emerald-600 shadow-sm" : "text-slate-600 hover:text-emerald-600"
-            }`}>{link.name}</Link>
-          ))}
-        </div>
-
-        {/* Mobile Toggle */}
-        <button className="md:hidden z-[110] relative p-2" onClick={() => setOpen(!open)}>
-          <div className="w-6 space-y-1.5">
-            <span className={`block h-0.5 w-6 bg-slate-900 transition-all ${open ? "rotate-45 translate-y-2" : ""}`}></span>
-            <span className={`block h-0.5 w-6 bg-slate-900 transition-all ${open ? "opacity-0" : ""}`}></span>
-            <span className={`block h-0.5 w-6 bg-slate-900 transition-all ${open ? "-rotate-45 -translate-y-2" : ""}`}></span>
-          </div>
-        </button>
-      </div>
-
-      {/* Mobile Menu Overlay */}
-      <div className={`fixed inset-0 bg-white/95 backdrop-blur-2xl z-[105] flex flex-col items-center justify-center space-y-8 transition-all duration-500 md:hidden ${
-        open ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-full"
+    <>
+      {/* Primary Navigation Bar */}
+      <nav className={`fixed top-0 left-0 w-full z-[100] transition-all duration-300 px-6 py-4 ${
+        scrolled ? "bg-white/90 backdrop-blur-xl shadow-md py-3" : "bg-transparent"
       }`}>
-        {navLinks.map((link) => (
-          <Link key={link.path} to={link.path} className="text-3xl font-black text-slate-900 hover:text-emerald-600">{link.name}</Link>
-        ))}
+        <div className="container mx-auto flex justify-between items-center">
+          
+          <Link to="/" className="flex items-center gap-2 relative z-[110]">
+            <div className="w-10 h-10 bg-emerald-600 rounded-xl flex items-center justify-center text-white font-black text-xl">N</div>
+            <h1 className={`text-2xl font-black tracking-tighter transition-colors ${open ? "text-slate-900" : scrolled ? "text-slate-900" : "text-slate-900"}`}>
+              Nutfullo<span className="text-emerald-600">.</span>
+            </h1>
+          </Link>
+
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items-center bg-slate-100/50 backdrop-blur-md px-2 py-1.5 rounded-2xl border border-white/50">
+            {navLinks.map((link) => (
+              <Link key={link.path} to={link.path} className={`px-5 py-2 rounded-xl text-sm font-bold transition-all ${
+                location.pathname === link.path ? "bg-white text-emerald-600 shadow-sm" : "text-slate-600 hover:text-emerald-600"
+              }`}>{link.name}</Link>
+            ))}
+          </div>
+
+          {/* Mobile Toggle Button - High Z-Index to stay clickable */}
+          <button 
+            className="md:hidden relative z-[110] p-2 focus:outline-none" 
+            onClick={() => setOpen(!open)}
+            aria-label="Toggle Menu"
+          >
+            <div className="w-6 space-y-1.5">
+              <span className={`block h-0.5 w-6 bg-slate-900 transition-all duration-300 ${open ? "rotate-45 translate-y-2" : ""}`}></span>
+              <span className={`block h-0.5 w-6 bg-slate-900 transition-all duration-300 ${open ? "opacity-0" : ""}`}></span>
+              <span className={`block h-0.5 w-6 bg-slate-900 transition-all duration-300 ${open ? "-rotate-45 -translate-y-2" : ""}`}></span>
+            </div>
+          </button>
+        </div>
+      </nav>
+
+      {/* Full-Screen Mobile Menu Overlay */}
+      <div className={`fixed inset-0 bg-white z-[95] flex flex-col items-center justify-center transition-all duration-500 ease-in-out md:hidden ${
+        open ? "translate-y-0 opacity-100 visible" : "-translate-y-full opacity-0 invisible"
+      }`}>
+        <div className="flex flex-col items-center space-y-8">
+          {navLinks.map((link) => (
+            <Link 
+              key={link.path} 
+              to={link.path} 
+              className="text-4xl font-black text-slate-900 hover:text-emerald-600 transition-colors"
+            >
+              {link.name}
+            </Link>
+          ))}
+          <Link 
+            to="/contact" 
+            className="mt-4 px-10 py-4 bg-emerald-600 text-white font-bold rounded-2xl shadow-lg shadow-emerald-100"
+          >
+            Get Free Sample
+          </Link>
+        </div>
       </div>
-    </nav>
+    </>
   );
 }
