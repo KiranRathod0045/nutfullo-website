@@ -1,7 +1,6 @@
 export default function Hero() {
   return (
     <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-[#faf9f6] pt-10">
-      {/* Background Decorative - pointer-events-none is key here */}
       <div className="absolute top-0 right-0 -z-10 w-1/2 h-full bg-gradient-to-l from-amber-100/40 to-transparent rounded-l-full blur-3xl pointer-events-none" />
       <div className="absolute -bottom-24 -left-24 -z-10 w-96 h-96 bg-emerald-100/30 rounded-full blur-3xl pointer-events-none" />
 
